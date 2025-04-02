@@ -55,7 +55,7 @@ const ProductDetails = () => {
             className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground"
           >
             <ChevronLeft className="h-4 w-4 mr-1" />
-            Back to products
+            Volver a productos
           </Link>
         </div>
 
@@ -74,7 +74,7 @@ const ProductDetails = () => {
               {isLowStock && (
                 <div className="absolute top-4 left-4 bg-amber-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center">
                   <AlertCircle className="h-4 w-4 mr-1" />
-                  Low Stock
+                  Existencias bajas
                 </div>
               )}
             </div>
@@ -83,7 +83,7 @@ const ProductDetails = () => {
               <div className="flex justify-between items-start">
                 <div>
                   <h1 className="text-2xl font-bold text-foreground">{product.name}</h1>
-                  <p className="text-muted-foreground">Code: {product.code}</p>
+                  <p className="text-muted-foreground">Código: {product.code}</p>
                 </div>
                 <div className="flex space-x-2">
                   <Link
@@ -91,31 +91,31 @@ const ProductDetails = () => {
                     className="p-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 button-hover"
                   >
                     <Edit className="h-5 w-5" />
-                    <span className="sr-only">Edit</span>
+                    <span className="sr-only">Editar</span>
                   </Link>
                   <button
                     onClick={() => setIsDeleteDialogOpen(true)}
                     className="p-2 rounded-md bg-destructive text-destructive-foreground hover:bg-destructive/90 button-hover"
                   >
                     <Trash2 className="h-5 w-5" />
-                    <span className="sr-only">Delete</span>
+                    <span className="sr-only">Eliminar</span>
                   </button>
                 </div>
               </div>
               
               <div className="mt-6 space-y-4">
                 <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Price</span>
+                  <span className="text-muted-foreground">Precio</span>
                   <span className="font-semibold">${product.price.toFixed(2)}</span>
                 </div>
                 
                 <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Category</span>
+                  <span className="text-muted-foreground">Categoría</span>
                   <span className="px-2 py-1 bg-secondary rounded-full text-sm">{product.category}</span>
                 </div>
                 
                 <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Stock Quantity</span>
+                  <span className="text-muted-foreground">Cantidad existente</span>
                   <div className="flex items-center">
                     <span className={cn(
                       "px-3 py-1 rounded-full text-sm font-medium",
@@ -123,18 +123,18 @@ const ProductDetails = () => {
                         ? "bg-amber-100 text-amber-800"
                         : "bg-green-100 text-green-800"
                     )}>
-                      {product.quantity} units
+                      {product.quantity} unidades
                     </span>
                   </div>
                 </div>
                 
                 <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Low Stock Threshold</span>
-                  <span>{product.lowStockThreshold} units</span>
+                  <span className="text-muted-foreground">Umbral de stock bajo</span>
+                  <span>{product.lowStockThreshold} unidades</span>
                 </div>
                 
                 <div className="flex justify-between items-center py-3 border-b">
-                  <span className="text-muted-foreground">Stock Status</span>
+                  <span className="text-muted-foreground">Estado del stock</span>
                   <div className="w-full max-w-[200px]">
                     <div className="flex justify-between text-xs mb-1">
                       <span>0</span>
@@ -163,7 +163,7 @@ const ProductDetails = () => {
                 </div>
                 
                 <div className="flex justify-between items-center py-3">
-                  <span className="text-muted-foreground">Last Updated</span>
+                  <span className="text-muted-foreground">Última actualización</span>
                   <span>{new Date(product.updatedAt).toLocaleDateString()}</span>
                 </div>
               </div>
@@ -176,14 +176,14 @@ const ProductDetails = () => {
             to="/products"
             className="px-4 py-2 rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground button-hover"
           >
-            Back to List
+            Volver a la lista
           </Link>
           <Link
             to={`/edit-product/${product.id}`}
             className="px-4 py-2 rounded-md bg-primary text-primary-foreground hover:bg-primary/90 button-hover inline-flex items-center"
           >
             <Edit className="h-4 w-4 mr-2" />
-            Edit Product
+            Editar producto
           </Link>
         </div>
       </div>
@@ -191,19 +191,19 @@ const ProductDetails = () => {
       <AlertDialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
-            <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+            <AlertDialogTitle>Estas seguro</AlertDialogTitle>
             <AlertDialogDescription>
-              This action cannot be undone. This will permanently delete the product "{product.name}" from your inventory.
+            Esta acción no se puede deshacer. Eliminará el producto permanentemente. "{product.name}" de su inventario.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel>Cancelar</AlertDialogCancel>
             <AlertDialogAction 
               onClick={handleDelete}
               className="bg-destructive text-destructive-foreground hover:bg-destructive/90"
             >
               <Trash2 className="h-4 w-4 mr-2" />
-              Delete
+              Eliminar
             </AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>

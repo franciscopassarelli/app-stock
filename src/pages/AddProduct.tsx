@@ -15,7 +15,7 @@ const AddProduct = () => {
     console.log("📤 Enviando producto a Firestore:", data);
     addProduct(data);
     toast.success(`${data.name} añadido correctamente`);
-    navigate('/productos');
+    navigate('/products');
   };
 
   return (

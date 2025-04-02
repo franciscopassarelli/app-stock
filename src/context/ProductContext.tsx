@@ -28,8 +28,8 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
         });
         setProducts(productsList);
       } catch (err) {
-        setError('Failed to fetch products');
-        toast.error('Failed to fetch products');
+        setError('No se pudieron obtener los productos');
+        toast.error('No se pudieron obtener los productos');
         console.error(err);
       } finally {
         setLoading(false);
@@ -63,10 +63,10 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
       // 🔹 Guardar en el estado con el ID correcto
       setProducts((prevProducts) => [...prevProducts, { ...newProduct, id }]);
   
-      toast.success(`${productData.name} added successfully`);
+      toast.success(`${productData.name} agregado exitosamente`);
     } catch (err) {
-      setError('Failed to add product');
-      toast.error('Failed to add product');
+      setError('No se pudo agregar el producto');
+      toast.error('No se pudo agregar el producto');
       console.error(err);
     } finally {
       setLoading(false);
@@ -91,10 +91,10 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
           product.id === id ? { ...product, ...productData, updatedAt: new Date() } : product
         )
       );
-      toast.success(`${productData.name} updated successfully`);
+      toast.success(`${productData.name} actualizado exitosamente`);
     } catch (err) {
-      setError('Failed to update product');
-      toast.error('Failed to update product');
+      setError('No se pudo actualizar el producto');
+      toast.error('No se pudo actualizar el producto');
       console.error(err);
     } finally {
       setLoading(false);
@@ -142,7 +142,7 @@ const deleteProduct = async (id: string) => {
 export const useProducts = () => {
   const context = useContext(ProductContext);
   if (context === undefined) {
-    throw new Error('useProducts must be used within a ProductProvider');
+    throw new Error('useProducts debe usarse dentro de un ProductProvider');
   }
   return context;
 };

@@ -105,7 +105,7 @@ const Index = () => {
             </div>
             {lowStockProducts.length > 0 && (
               <Link to="/products" className="text-xs font-medium text-primary mt-2 block link-hover inline-block">
-                View items
+                Ver artículos
               </Link>
             )}
           </div>

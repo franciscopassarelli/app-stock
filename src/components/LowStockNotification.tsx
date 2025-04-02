@@ -27,7 +27,7 @@ export const LowStockNotification: React.FC = () => {
               ? `1 producto se está agotando.`
               : `${lowStockProducts.length} Los productos se están agotando en stock.`}
             {' '}
-            <Link to="/products" className="font-medium underline underline-offset-2 hover:text-amber-900">
+            <Link to="/" className="font-medium underline underline-offset-2 hover:text-amber-900">
             Ver detalles
             </Link>
           </p>
