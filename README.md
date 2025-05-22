@@ -9,13 +9,13 @@ Aplicación web moderna para la gestión de productos, desarrollada con **React*
 
 ## 🚀 Funcionalidades
 
-- 🔐 Autenticación de usuarios con Firebase.
+- 🔐 Almacenamiento de productos en base de datos Firebase.
 - 📝 Crear, editar y eliminar productos.
-- 📊 Visualización de productos en tabla responsive.
-- ✅ Validación de formularios con alertas dinámicas.
+- 📊 Visualización de productos en grande y en tablas.
 - 🎨 UI moderna utilizando TailwindCSS y shadcn/ui.
 - 📱 Diseño completamente responsive.
-- 🔔 Notificaciones y redirecciones automáticas.
+- ✅ Alertas lumbral de bajo stock dinámicas.
+- 🔔 Notificaciones para stock bajo y según elección.
 
 ---
 
@@ -26,7 +26,7 @@ Aplicación web moderna para la gestión de productos, desarrollada con **React*
 - **TypeScript**
 - **TailwindCSS**
 - **shadcn/ui**
-- **Firebase** (Auth + Firestore)
+- **Firebase** (firebase + Firestore)
 - **CSS Modules**
 
 ---
@@ -37,6 +37,7 @@ Aplicación web moderna para la gestión de productos, desarrollada con **React*
    ```bash
    git clone https://github.com/franciscopassarelli/app-stock.git
    cd app-stock
+
 2. npm install
 
 3. npm run dev
@@ -44,13 +45,13 @@ Aplicación web moderna para la gestión de productos, desarrollada con **React*
 ## 📸 Capturas
 
 ### 🧾 Lista de productos
-![vista de productos](./screenshots/prod.png)
+![vista de productos](./public/screenshots/prod.pngprod.png)
 
 ### ➕ Lista en filas de producto
-![vista lista de productos](./screenshots/vist.png)
+![vista lista de productos](./public/screenshots/vist.png)
 
 ### ➕ Lista en filas de producto
-![Metricas](./screenshots/panel.png)
+![Metricas](./public/screenshots/panel.png)
 
 
 Desarrollado 💻 por Francisco Passarelli.
