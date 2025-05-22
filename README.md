@@ -45,7 +45,7 @@ Aplicación web moderna para la gestión de productos, desarrollada con **React*
 ## 📸 Capturas
 
 ### 🧾 Lista de productos
-![vista de productos](./public/screenshots/prod.pngprod.png)
+![vista de productos]<img src="./public/screenshots/panel.png" width="600"/>
 
 ### ➕ Lista en filas de producto
 ![vista lista de productos](./public/screenshots/vist.png)
