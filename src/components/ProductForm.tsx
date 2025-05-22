@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ProductFormData } from '../types';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 interface ProductFormProps {
   initialData?: Partial<ProductFormData> & { id?: string };
@@ -132,7 +132,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               "w-full px-3 py-2 rounded-md border border-input bg-background text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
               errors.name && "border-red-500 focus-visible:ring-red-500"
             )}
-            placeholder="Enter product name"
+            placeholder="nombre del producto"
             disabled={isLoading}
           />
           {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name}</p>}
@@ -152,7 +152,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
               "w-full px-3 py-2 rounded-md border border-input bg-background text-sm file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50",
               errors.code && "border-red-500 focus-visible:ring-red-500"
             )}
-            placeholder="Enter product code"
+            placeholder="código del producto"
             disabled={isLoading}
           />
           {errors.code && <p className="text-red-500 text-xs mt-1">{errors.code}</p>}

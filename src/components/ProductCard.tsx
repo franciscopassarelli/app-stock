@@ -1,9 +1,9 @@
 
 import React from 'react';
 import { Product } from '../types';
-import { Card, CardContent, CardFooter } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { formatPrice } from '@/lib/utils';
+import { Card, CardContent, CardFooter } from '../components/ui/card';
+import { Button } from '../components/ui/button';
+import { formatPrice } from '../lib/utils';
 import { Link } from 'react-router-dom';
 import { Eye, Edit, Trash2, AlertCircle } from 'lucide-react';
 

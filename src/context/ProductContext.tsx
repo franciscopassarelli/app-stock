@@ -1,14 +1,13 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { Product, ProductFormData, ProductContextType } from '../types';
 import { toast } from 'sonner';
-import { db } from '@/firebase';
+import { db } from '../firebase'; // Asegúrate de importar tu configuración de Firebase
 import { collection, getDocs, addDoc, updateDoc, deleteDoc, doc } from 'firebase/firestore';
-
 // Crear contexto
 const ProductContext = createContext<ProductContextType | undefined>(undefined);
 
 // Componente proveedor
-export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [products, setProducts] = useState<Product[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -21,10 +20,12 @@ export const ProductProvider: React.FC<{ children: React.ReactNode }> = ({ child
         const querySnapshot = await getDocs(collection(db, 'productos')); // Consultar la colección productos
         const productsList: Product[] = [];
         querySnapshot.forEach((doc) => {
-          productsList.push({
-            id: doc.id, // Cada producto tiene un ID único
-            ...(doc.data() as Product), // Asumimos que los datos están en formato Product
-          });
+          const data = doc.data() as Omit<Product, 'id'>;
+productsList.push({
+  id: doc.id,
+  ...data,
+});
+
         });
         setProducts(productsList);
       } catch (err) {
@@ -139,10 +140,13 @@ const deleteProduct = async (id: string) => {
 };
 
 // Hook personalizado para usar el contexto
-export const useProducts = () => {
+const useProducts = () => {
   const context = useContext(ProductContext);
   if (context === undefined) {
     throw new Error('useProducts debe usarse dentro de un ProductProvider');
   }
   return context;
 };
+
+// 🔽 Agregá esto fuera de la función, al final del archivo:
+export { ProductProvider, useProducts };

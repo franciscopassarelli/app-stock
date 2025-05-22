@@ -3,8 +3,8 @@ import React from 'react';
 import { Trash2, Edit, Eye, AlertCircle } from 'lucide-react';
 import { Product } from '../types';
 import { Link } from 'react-router-dom';
-import { Button } from '@/components/ui/button';
-import { formatPrice } from '@/lib/utils';
+import { Button } from '../components/ui/button';
+import { formatPrice } from '../lib/utils';
 
 interface ProductListProps {
   products: Product[];

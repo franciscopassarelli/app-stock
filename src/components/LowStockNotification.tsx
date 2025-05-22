@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useProducts } from '../context/ProductContext';
 import { AlertCircle, X } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 export const LowStockNotification: React.FC = () => {
   const { lowStockProducts } = useProducts();

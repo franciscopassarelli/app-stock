@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Package, Plus, BarChart } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 import { ThemeToggle } from './ThemeToggle';
 
 export const Navbar: React.FC = () => {

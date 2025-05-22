@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Package, TrendingUp, AlertCircle, BarChart3, Plus } from 'lucide-react';
 import { useProducts } from '../context/ProductContext';
 import { PieChart, Pie, ResponsiveContainer, Cell, Tooltip, Legend } from 'recharts';
-import { cn } from '@/lib/utils';
+import { cn } from '../lib/utils';
 
 const Index = () => {
   const { products, lowStockProducts } = useProducts();

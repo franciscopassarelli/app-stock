@@ -1,8 +1,8 @@
 
 import React, { useState } from 'react';
 import { Plus } from 'lucide-react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogTrigger } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogFooter, DialogTrigger } from '../components/ui/dialog';
+import { Button } from '../components/ui/button';
 import { toast } from 'sonner';
 
 interface AddCategoryButtonProps {

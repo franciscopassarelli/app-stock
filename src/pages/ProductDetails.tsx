@@ -5,8 +5,8 @@ import { useProducts } from '../context/ProductContext';
 import { useNavigate, useParams, Link } from 'react-router-dom';
 import { Edit, Trash2, ChevronLeft, AlertCircle } from 'lucide-react';
 import { toast } from 'sonner';
-import { cn } from '@/lib/utils';
-import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '@/components/ui/alert-dialog';
+import { cn } from '../lib/utils';
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle } from '../components/ui/alert-dialog';
 
 const ProductDetails = () => {
   const { id } = useParams<{ id: string }>();

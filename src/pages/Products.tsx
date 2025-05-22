@@ -2,10 +2,10 @@ import React, { useState, useEffect, useMemo } from 'react';
 import { Layout } from '../components/Layout';
 import { SearchBar } from '../components/SearchBar';
 import { useProducts } from '../context/ProductContext';
-import { ProductsHeader } from '@/components/ProductsHeader';
-import { EmptyProductsState } from '@/components/EmptyProductsState';
-import { ProductsDisplay } from '@/components/ProductsDisplay';
-import { DeleteProductDialog } from '@/components/DeleteProductDialog';
+import { ProductsHeader } from '../components/ProductsHeader';
+import { EmptyProductsState } from '../components/EmptyProductsState';
+import { ProductsDisplay } from '../components/ProductsDisplay';
+import { DeleteProductDialog } from '../components/DeleteProductDialog';
 
 const Products = () => {
   const { products, deleteProduct } = useProducts();
